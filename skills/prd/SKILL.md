@@ -44,6 +44,9 @@ What this explicitly does not cover, so no one gold-plates it.
 
 ## Hard rules
 
+- **One PRD = one coherent deliverable** (shared core, accepted as one thing; it can span surfaces and many requirements). If grilling and slicing it would not fit one focused build, split into separate PRDs. Why: the deliverable boundary is set here, and downstream it becomes one plan and one branch.
+  - **Test for "one deliverable":** one nameable identity, one problem or job, one shared core entity, parts that need each other to be useful, one acceptance boundary. Surfaces, actors, and requirements multiply *inside* a deliverable; their count never forces a split.
+  - **Split signal:** two of {problem, core entity, acceptance boundary} that are independent, each shippable and accepted on its own with no shared core. That is two PRDs, not one.
 - **No implementation.** No modules, seams, schema, file structure, or technical decisions. Behavior and expectations only. The how is `/plan`.
 - **No file paths or code snippets** in the PRD. They go stale fast.
 - **Acceptance criteria must be testable.** "Works correctly" is not a criterion; "returns 403 for an unauthenticated request" is.

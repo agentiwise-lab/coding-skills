@@ -9,7 +9,7 @@ Design the HOW and slice the work into a dependency-ordered set of implementatio
 - `docs/prds/<slug>.md` (a feature PRD), OR
 - `docs/bug-reports/<slug>.md` (a bug fix RCA).
 
-Reuse the same `<slug>` for the plan.
+Reuse the same `<slug>` for the plan; it is the feature key. **One PRD = one plan = one branch** (`feat/<slug>`). Given multiple PRDs, produce one plan each in dependency order: never merge PRDs into one plan, never split one PRD. The deliverable boundary is fixed upstream at grill/PRD; the plan only phases units *within* it. `/to-issues` stamps the key on every issue as `feat:<slug>` and `/implement` turns it into the `feat/<slug>` branch; both carry the key, neither decides it.
 
 ## Process
 1. Explore the repo: read the glossary, respect existing ADRs, find the modules and seams the work touches. Done when you can name every file the work will modify.
@@ -26,6 +26,7 @@ Write `docs/plans/<slug>.md`.
 <plan-template>
 # Plan: <title>
 Source: docs/prds/<slug>.md (or docs/bug-reports/<slug>.md)
+Feature key: <slug>  (one feature = this plan; issues get label `feat:<slug>`, work lands on branch `feat/<slug>`)
 
 ## Module interaction
 One short paragraph: which modules talk to which, in one direction only.
